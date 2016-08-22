@@ -119,7 +119,7 @@ class Pokestop(object):
         """Performs an HTTP post and returns the result"""
 
         content['v'] = self.version
-        request = requests.post(url, data=json.dumps(content), headers=self.headers)
+        request = requests.post(url, data=json.dumps(content), headers=self.headers, timeout=10)
 
         return request.json()['result']
 
